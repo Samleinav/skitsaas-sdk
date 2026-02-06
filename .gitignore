@@ -4,9 +4,9 @@ package-lock.json
 yarn.lock
 
 # Build output
-dist/
 build/
 lib/
+src/
 *.tsbuildinfo
 
 # IDE
