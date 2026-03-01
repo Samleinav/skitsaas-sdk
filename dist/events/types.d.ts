@@ -1,5 +1,5 @@
-import type { EventHook } from './catalog';
-export type { EventHook } from './catalog';
+import type { EventHook } from './catalog.js';
+export type { EventHook } from './catalog.js';
 export type EventPayload = Record<string, unknown>;
 export type ModuleEventContext = {
     hook: EventHook;

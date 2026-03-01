@@ -1,6 +1,12 @@
-export { EVENT_HOOKS } from './events/catalog';
-export type { EventHook } from './events/catalog';
-export type { EventPayload, ModuleEventContext, EventEmitContext, ModuleEventHandler, RegisteredEventHandler, EventEnvelope, EventDispatchResult } from './events/types';
-export type { ModuleArea, ModuleNavArea, ModuleNavItem, ModuleWidgetDefinition, ModuleRouteContext, ModulePageHandler, ModuleApiHandler, ModuleManifest } from './modules/manifest';
-export { defineModule, validateModuleManifest } from './modules/manifest';
-export type { ModuleI18nNamespace, ModuleMessageTree, ModuleMessagesByLocale, ModuleMessagesByArea } from './i18n/types';
+export { EVENT_HOOKS } from './events/catalog.js';
+export type { EventHook } from './events/catalog.js';
+export type { EventPayload, ModuleEventContext, EventEmitContext, ModuleEventHandler, RegisteredEventHandler, EventEnvelope, EventDispatchResult } from './events/types.js';
+export type { ModuleArea, ModuleNavArea, ModuleRouteAccess, ModuleNavItem, ModuleWidgetDefinition, ModuleRouteContext, ModuleFrontendSlotContext, ModulePageHandler, ModuleApiHandler, ModuleFrontendSlotHandler, ModuleFrontendSlotDefinition, ModuleTemplatePackEntry, ModuleTemplatePack, ModuleAuthProviderKind, ModuleAuthProviderFlow, ModuleAuthProviderCapabilities, ModuleAuthProviderRoutes, ModuleAuthProvider, ModulePaymentOrderType, ModulePaymentMethodRoutes, ModulePaymentMethod, ModuleManifest } from './modules/manifest.js';
+export { defineModule, validateModuleManifest } from './modules/manifest.js';
+export type { ModuleI18nNamespace, ModuleMessageTree, ModuleMessagesByLocale, ModuleMessagesByArea } from './i18n/types.js';
+export { ThemeI18nProvider, useThemeMessages, resolveThemeMessages, type ThemeMessageTree, type ThemeMessagesByLocale, type ThemeI18nRegistry } from './i18n/theme.js';
+export { defineThemeConfig, type ThemeConfig, type ThemeAssetsConfig, type ThemeAssetArea, type ThemeAssetPathMap, type ThemeAssetListPathMap, type ThemeAssetBooleanMap, type ThemeTemplateIdMap, type ThemeHeadConfig, type ThemeProviderProps } from './theme/config.js';
+export type { DataTableTemplateSlot, DataTableTemplateContract, DataTableTemplateEntryFactoryOptions, DataTableCrudOperation, DataTableListResult, DataTableListHandler, DataTableCreateHandler, DataTableUpdateHandler, DataTableDeleteHandler, DataTableCrudPolicy, DataTableCrudPolicies, DataTableCrudRevalidation, DataTableCrudRouterOptions } from './datatables/index.js';
+export { createDataTableTemplateContract, createDataTableTemplateEntries, createDataTableCrudApiRouter } from './datatables/index.js';
+export type { ClassNameValue } from './templates/utils.js';
+export { mergeClassNames, readString, toStringOrNull, toStringOrFallback, toNumberOrFallback } from './templates/utils.js';
