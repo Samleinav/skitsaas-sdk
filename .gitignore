@@ -15,7 +15,7 @@ src/
 *.swp
 *.swo
 *~
-
+.npmrc
 # OS
 .DS_Store
 Thumbs.db
