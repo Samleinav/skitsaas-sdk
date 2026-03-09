@@ -1,20 +1,19 @@
-import { type ColumnDef, type VisibilityState } from '@tanstack/react-table';
-export type SdkDataTableLabels = {
-    filterPlaceholder: string;
-    columns: string;
-    noResults: string;
-    showingRows: string;
-    previous: string;
-    next: string;
+import * as React from 'react';
+import type { BuildTableColumn, BuildTableDefinition, BuildTableHeaderDefinition, BuildTableLabels, BuildTablePaginationDefinition, BuildTableQueryState, BuildTableToolbarDefinition } from '../datatables/definition.js';
+export type SdkDataTableLabels = BuildTableLabels;
+export type SdkDataTableColumn<TItem extends Record<string, unknown>> = BuildTableColumn<TItem>;
+export type DataTableProps<TItem extends Record<string, unknown>> = {
+    definition?: BuildTableDefinition<TItem>;
+    data?: TItem[];
+    columns?: SdkDataTableColumn<TItem>[];
+    labels?: SdkDataTableLabels;
+    className?: string;
+    tableClassName?: string;
+    emptyState?: React.ReactNode;
+    header?: BuildTableHeaderDefinition;
+    toolbar?: BuildTableToolbarDefinition<TItem>;
+    pagination?: BuildTablePaginationDefinition;
+    query?: BuildTableQueryState;
+    onQueryChange?: (query: BuildTableQueryState) => void;
 };
-type SdkDataTableProps<TData, TValue> = {
-    columns: ColumnDef<TData, TValue>[];
-    data: TData[];
-    labels?: Partial<SdkDataTableLabels>;
-    filterColumn?: string;
-    filterPlaceholder?: string;
-    emptyMessage?: string;
-    initialColumnVisibility?: VisibilityState;
-};
-export declare function DataTable<TData, TValue>({ columns, data, labels, filterColumn, filterPlaceholder, emptyMessage, initialColumnVisibility }: SdkDataTableProps<TData, TValue>): import("react/jsx-runtime").JSX.Element;
-export {};
+export declare function DataTable<TItem extends Record<string, unknown>>({ definition, data, columns, labels, className, tableClassName, emptyState, header, toolbar, pagination, query, onQueryChange }: DataTableProps<TItem>): import("react/jsx-runtime").JSX.Element;
